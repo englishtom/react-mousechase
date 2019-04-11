@@ -1,0 +1,27 @@
+$grey: #DEDEDE;
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.image-cover {
+    background-color: $grey;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &.one {
+        background-image: url("./bg-1.jpg");  
+    }
+    &.two {
+        background-image: url("./bg-2.jpg");  
+    }
+}
+
+.mousechase-icon__icon {
+    width: 100px!important;
+    height: 100px!important;
+}

@@ -5,7 +5,7 @@ import {
     MouseChaseIcon
 } from '../src';
 
-import icon from './icon-play.svg';
+import playSvg from './icon-play.svg';
 
 class App extends Component {
 
@@ -26,6 +26,8 @@ class App extends Component {
 
         const {BackgroundState, IconState} = this.state;
 
+        const icon = <img src={playSvg} />
+
         return (
             <div>
                 <div>
@@ -38,8 +40,8 @@ class App extends Component {
                 </div>
                 <div>
                     <h2>MouseChaseIcon</h2>
-                    <MouseChaseIcon 
-                        icon={icon} 
+                    <MouseChaseIcon
+                        icon={icon}
                         onClick={() => alert('You clicked the icon!')}
                         {...IconState}
                     >

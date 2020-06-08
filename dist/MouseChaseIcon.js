@@ -179,15 +179,14 @@ function (_Component) {
           position: 'relative',
           overflow: 'hidden'
         }
-      }, children, _react["default"].createElement("img", {
+      }, children, _react["default"].createElement("div", {
         onClick: onClick,
-        src: icon,
         style: style,
         ref: _this.icon,
         className: (0, _classnames["default"])('mousechase-icon__icon', {
           'mousechase-icon__icon--active': over
         })
-      }));
+      }, icon));
     });
 
     return _this;
@@ -199,7 +198,7 @@ function (_Component) {
 MouseChaseIcon.propTypes = {
   disabled: _propTypes["default"].bool,
   friction: _propTypes["default"].number.isRequired,
-  icon: _propTypes["default"].string.isRequired,
+  icon: _propTypes["default"].node.isRequired,
   onClick: _propTypes["default"].func.isRequired
 };
 MouseChaseIcon.defaultProps = {

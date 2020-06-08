@@ -28,9 +28,9 @@ class MouseChaseIcon extends Component {
         y = lFollowY = (node.clientHeight / 2) + node.offsetTop;
 
         this.setState({
-            x, 
-            y, 
-            lFollowX, 
+            x,
+            y,
+            lFollowX,
             lFollowY
         });
 
@@ -71,9 +71,9 @@ class MouseChaseIcon extends Component {
         this.setState({lFollowX, lFollowY});
     }
 
-    moveIcon = () => {		
+    moveIcon = () => {
         let {
-            x, 
+            x,
             y,
             lFollowX,
             lFollowY
@@ -84,7 +84,7 @@ class MouseChaseIcon extends Component {
         x += (lFollowX - x) * friction;
         y += (lFollowY - y) * friction;
 
-        if(this._isMounted) { 
+        if(this._isMounted) {
             this.setState({x, y});
 
             window.requestAnimationFrame(this.moveIcon);
@@ -110,7 +110,7 @@ class MouseChaseIcon extends Component {
         } = this.props;
 
         const {
-            x, 
+            x,
             y,
             over
         } = this.state;
@@ -126,7 +126,7 @@ class MouseChaseIcon extends Component {
         return (
             <div className={classNames("mousechase-wrapper mousechase-icon", {[className]: (className !== undefined)})} style={{position: 'relative', overflow: 'hidden'}}>
                 {children}
-                <img onClick={onClick} src={icon} style={style} ref={this.icon} className={classNames('mousechase-icon__icon', {'mousechase-icon__icon--active': over})} />
+                <div onClick={onClick} style={style} ref={this.icon} className={classNames('mousechase-icon__icon', {'mousechase-icon__icon--active': over})}>{icon}</div>
             </div>
         )
 
@@ -137,7 +137,7 @@ class MouseChaseIcon extends Component {
 MouseChaseIcon.propTypes = {
     disabled: PropTypes.bool,
     friction: PropTypes.number.isRequired,
-    icon:     PropTypes.string.isRequired,
+    icon:     PropTypes.node.isRequired,
     onClick:  PropTypes.func.isRequired,
 };
 
